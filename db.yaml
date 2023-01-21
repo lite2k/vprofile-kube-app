@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
+  name: db-deployment
   labels: 
     app: vproappdb
 spec:
@@ -32,11 +32,11 @@ spec:
           args:
             - "--ignore-db-dir=lost+found"
       nodeSelector:
-        zone: ZONE_LABEL
+        zone: us-east-1a
       volumes:
         - name: vpro-db-data
           awsElasticBlockStore:
-            volumeID: volumeID
+            volumeID: vol-0120083df5278065f
             fsType: ext4
 
 
