@@ -28,6 +28,3 @@ spec:
                   key: rmq-password
             - name: RABBITMQ_DEFAULT_USER
               value: "guest"
-
-
-  
