@@ -8,5 +8,5 @@ spec:
     app: vpromc
   ports:
     - port: 11211
-      targetPort: memecached-port
+      targetPort: memcached-port
       protocol: TCP
