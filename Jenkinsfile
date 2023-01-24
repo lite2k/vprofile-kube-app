@@ -81,7 +81,7 @@ pipeline{
         }
         stage('HELM: Deploy Kubernetes cluster'){
             steps{
-                sh 'helm upgrade --install --force vprofile-stack helm/vpro-charts --set appImage=$($registry):V$(BUILD_NUMBER)'
+                sh "helm upgrade --install --force vprofile-stack helm/vpro-charts --set appImage=${registry}:${BUILD_NUMBER}"
             }
         }
     }
