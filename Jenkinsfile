@@ -34,7 +34,7 @@ pipeline{
         stage('SonarQube: CheckStyle'){
             environment
             {
-                scannerHome = 'sonar_scanner'
+                scannerHome = tool 'sonar_scanner'
             }
             tools{
                 jdk 'JDK-11'
