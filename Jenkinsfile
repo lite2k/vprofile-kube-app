@@ -62,7 +62,7 @@ pipeline{
                 }
             }
         }
-        satge('DOCKER: Upload Image')
+        stage('DOCKER: Upload Image')
         {
             steps{
                 script{
