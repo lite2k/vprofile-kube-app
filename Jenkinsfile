@@ -50,7 +50,7 @@ pipeline{
                    -Dsonar.jacoco.reportsPath=target/jacoco.exec \
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
                 }
-                timeout(time:5,units:'MINUTES'){
+                timeout(time:5,unit:'MINUTES'){
                     waitForQualityGate abortPipeline: true
                 }
             }
@@ -80,7 +80,9 @@ pipeline{
             }
         }
         stage('HELM: Deploy Kubernetes cluster'){
-            sh 'helm upgrade --install --force vprofile-stack helm/vpro-charts --set appImage=$($registry):V$(BUILD_NUMBER)'
+            steps{
+                sh 'helm upgrade --install --force vprofile-stack helm/vpro-charts --set appImage=$($registry):V$(BUILD_NUMBER)'
+            }
         }
     }
     
