@@ -1,9 +1,9 @@
 ## CICD pipeline for vprofile app
-* * *
+
 This branch builds upon the kubernetes manifest files in `main` branch, by using Jenkinsfile to create a pipeline and helm to deploy and manage the vprofile app stack.
 * * *
 ## Disclaimer
-* * *
+
 I don't own the following files:
 - pom.xml
 - src/
